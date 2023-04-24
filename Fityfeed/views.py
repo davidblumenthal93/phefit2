@@ -114,7 +114,7 @@ def userPage(request):
             finalFoodItems.append(food_items)
     totalPhe=0
     for foods in finalFoodItems:
-        totalPhe+=foods.phenylaline
+        totalPhe += foods.phenylalanine
     PheLeft=2000-totalPhe
     context={'PheLeft':PheLeft,'totalPhe':totalPhe,'cnt':cnt,'foodlist':finalFoodItems,'fooditem':fooditems,'myfilter':myfilter}
     return render(request,'user.html',context)

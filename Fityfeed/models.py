@@ -29,7 +29,7 @@ class Fooditem(models.Model):
     fats = models.DecimalField(max_digits=5,decimal_places=2,default=0)
     protein = models.DecimalField(max_digits=5,decimal_places=2,default=0)
     calorie=models.DecimalField(max_digits=5,decimal_places=2,default=0,blank=True)
-    phenylalinine=models.DecimalField(max_digits=5,decimal_places=2,default=0,blank=True)
+    phenylalanine=models.DecimalField(max_digits=5,decimal_places=2,default=0,blank=True)
     quantity = models.IntegerField(default=1,null=True,blank=True)
     
     def __str__(self):
