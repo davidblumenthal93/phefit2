@@ -25,7 +25,9 @@ SECRET_KEY = '1oft^)+@nuk+5-&r$g3w_42lhnpsagi(6q5)mua7=2y%8%&dd6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'phetracker.pythonanywhere.com',
+]
 
 
 # Application definition
