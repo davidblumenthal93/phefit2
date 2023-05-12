@@ -1,5 +1,5 @@
 """
-ASGI config for calorieCalc project.
+ASGI config for PheFit project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'calorieCalc.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'PheFit.settings')
 
 application = get_asgi_application()

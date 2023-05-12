@@ -115,7 +115,7 @@ def userPage(request):
     totalPhe=0
     for foods in finalFoodItems:
         totalPhe += foods.phenylalanine
-    PheLeft=2000-totalPhe
+    PheLeft=400-totalPhe
     context={'PheLeft':PheLeft,'totalPhe':totalPhe,'cnt':cnt,'foodlist':finalFoodItems,'fooditem':fooditems,'myfilter':myfilter}
     return render(request,'user.html',context)
 
@@ -131,3 +131,7 @@ def addFooditem(request):
     context={'form':form}
     return render(request,'addUserFooditem.html',context)
 
+def deleteFooditem(request, id):
+    food_item = Fooditem.objects.get(id=id)
+    food_item.delete()
+    return redirect('home')

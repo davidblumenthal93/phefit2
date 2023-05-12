@@ -7,19 +7,19 @@
 	<h2>Tracker</h2>
 	<div class="flex-box-row">
 		<h3>Phe Limit: 400</h3>
-		<h3>totalPhenylalinine consumed: {{totalPhenylalinine}}</h3>
-		<h3>Left: {{ PhenylalinineLeft }}</h3>
+		<h3>Total Phenylalanine consumed: {{totalPhe}}</h3>
+		<h3>Left: {{ PheLeft }}</h3>
 	</div>
 	
     <div class="card card-body">
         <table>
             <tr>
-                <th>fooditem</th>
+                <th>Food Item</th>
                 <th>Calorie</th>
                 <th>Carbs</th>
                 <th>Fats</th>
                 <th>Protien</th>
-				<th>Phenylalinine</th>
+				<th>Phenylalanine</th>
             </tr>
             {% for food in foodlist %}
             <tr>
@@ -29,6 +29,14 @@
                 <td> {{food.fats}}</td>
 				<td> {{food.protein}}</td>
 				<td> {{food.phenylalanine}}</td>
+				<td>
+					<form action="{% url 'deleteFooditem' food.id %}" method="POST">
+						{% csrf_token %}
+						<button type="submit" class="btn btn-danger btn-sm">
+							<span class="glyphicon glyphicon-trash"></span>
+						</button>
+					</form>
+				</td>
 			</tr>
             {% endfor %}
         </table>
@@ -65,7 +73,7 @@
 					<th>Carbs</th>
 					<th>Fats</th>
 					<th>Protien</th>
-					<th>Phenylalinine</th>
+					<th>phenylalanine</th>
 				</tr>
 				{% for food in fooditem %}
 				<tr>
@@ -74,7 +82,7 @@
 					<td> {{food.carbohydrate}}</td>
                     <td> {{food.fats}}</td>
                     <td> {{food.protein}}</td>
-					<td>{{food.phenylalinine}}</td>
+					<td>{{food.phenylalanine}}</td>
 					</tr>
 				{% endfor %}
 			</table>
